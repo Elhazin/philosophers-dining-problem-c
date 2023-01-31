@@ -7,8 +7,8 @@ In the problem, there are n philosophers sitting around a table, each with their
 The solution to this problem involves using a lock or a semaphore to control the access to the forks, ensuring that no two philosophers are able to pick up the same fork at the same time.</h4><br>
 
  ## What is Deadlock ? 
-  <h4>
-A deadlock is a state in computer programming where two or more processes are blocked and unable to continue executing because each process is waiting for the other to release a resource that it holds. This creates a situation where both processes are stuck and can no longer make progress, resulting in a "deadlock" where neither process can proceed. This can lead to a system hang, causing the affected processes and potentially the entire system to become unresponsive. Deadlocks can occur in multi-process or multi-threaded systems, and are a common synchronization problem in computer science.</h4>
+  <h4><em>
+A deadlock is a state in computer programming where two or more processes are blocked and unable to continue executing because each process is waiting for the other to release a resource that it holds. This creates a situation where both processes are stuck and can no longer make progress, resulting in a "deadlock" where neither process can proceed. This can lead to a system hang, causing the affected processes and potentially the entire system to become unresponsive. Deadlocks can occur in multi-process or multi-threaded systems, and are a common synchronization problem in computer science.</em></h4>
  <br>
 
  
