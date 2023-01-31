@@ -1,6 +1,6 @@
 # philosophers-dining-problem-c
 <br>
-<h4>The Philosophers' Dining Problem is a classic problem in computer science and concurrency control that deals with coordination between multiple processes. It was first introduced by Edsger Dijkstra in 1965.<br>
+<h4>The Philosophers' Dining Problem is a classic problem in computer science and concurrency control that deals with coordination between multiple processes. It was first introduced by <a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra">Edsger Dijkstra</a> in 1965.<br>
 
 In the problem, there are n philosophers sitting around a table, each with their own plate and fork. The philosophers alternate between thinking and eating, and they need to use two forks to eat. The problem is to ensure that each philosopher can eat without getting into a deadlock or a starvation situation.<br>
 
