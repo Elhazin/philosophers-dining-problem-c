@@ -12,6 +12,6 @@ A deadlock is a state in computer programming where two or more processes are bl
  <br>
 
  
- ###    What is Datarace ?
+ ##   What is Datarace ?
   <h4>
  A data race is a condition in computer programming where multiple threads attempt to access and modify a shared piece of data concurrently, leading to unpredictable results. It occurs when the execution order of operations on the shared data is not well defined, leading to a race between the threads to access and modify the same memory location. This can result in data inconsistencies, errors, and crashes, making data races a major concern in multithreaded programming.</h4>
