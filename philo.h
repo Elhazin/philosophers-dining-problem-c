@@ -22,16 +22,16 @@
 
 typedef struct t_struct
 {
-	pthread_mutex_t	print;
-	pthread_mutex_t	save;
-	pthread_mutex_t	tcheck;
+	pthread_mutex_t	*print;
+	pthread_mutex_t	*save;
+	pthread_mutex_t	*tcheck;
 }t_struct;
 typedef struct t_phil
 {
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	save;
-	pthread_mutex_t	print;
-	pthread_mutex_t	tcheck;
+	pthread_mutex_t	*save;
+	pthread_mutex_t	*print;
+	pthread_mutex_t	*tcheck;
 	int				id_left;
 	int				check;
 	int				all;
@@ -47,6 +47,7 @@ typedef struct t_phil
 	int				nof;
 	int				nop;
 	pthread_t		pid;
+	t_struct		*ptr;
 }t_philo;
 
 int		ft_atoi(const char *s);

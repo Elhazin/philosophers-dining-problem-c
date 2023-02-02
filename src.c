@@ -6,7 +6,7 @@
 /*   By: abouzanb <abouzanb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 23:08:26 by abouzanb          #+#    #+#             */
-/*   Updated: 2023/01/31 23:22:31 by abouzanb         ###   ########.fr       */
+/*   Updated: 2023/02/02 20:03:48 by abouzanb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,16 +62,24 @@ void	little(int ac, t_philo *p, char *av[], int i)
 int	get_that(char *av[], pthread_mutex_t *forks, t_philo *philo, int ac)
 {
 	int				i;
-	t_struct		ptr;
+	t_struct		*ptr;
+	int				x;
 
+	ptr = malloc(sizeof(t_struct));
+	ptr->save = malloc(sizeof(pthread_mutex_t));
+	ptr->tcheck = malloc(sizeof(pthread_mutex_t));
+	ptr->print = malloc(sizeof(pthread_mutex_t));
 	i = 0;
-	pthread_mutex_init(&ptr.print, NULL);
-	pthread_mutex_init(&ptr.save, NULL);
-	pthread_mutex_init(&ptr.tcheck, NULL);
+	x = philo->nof;
+	pthread_mutex_init(ptr->print, NULL);
+	pthread_mutex_init(ptr->save, NULL);
+	pthread_mutex_init(ptr->tcheck, NULL);
+	philo->ptr = ptr;
 	while (i < philo->nof)
 	{
+		philo[i].nof = x;
 		philo[i].forks = forks;
-		minihelp(av, &ptr, &philo[i], i);
+		minihelp(av, ptr, &philo[i], i);
 		little(ac, &philo[i], av, i);
 		if (philo[i].ttd == -1 || philo[i].tts == -1 || philo[i].tte == -1)
 			return (-1);

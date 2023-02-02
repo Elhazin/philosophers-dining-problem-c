@@ -6,7 +6,7 @@
 /*   By: abouzanb <abouzanb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:53:23 by abouzanb          #+#    #+#             */
-/*   Updated: 2023/01/31 22:27:56 by abouzanb         ###   ########.fr       */
+/*   Updated: 2023/02/02 14:08:50 by abouzanb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_usleep(long time)
 
 	t = the_time();
 	while ((the_time() - t) < time)
-		usleep(250);
+		usleep(100);
 }
 
 static int	helper_function(const char *s)

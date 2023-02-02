@@ -6,7 +6,7 @@
 /*   By: abouzanb <abouzanb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 22:05:52 by abouzanb          #+#    #+#             */
-/*   Updated: 2023/01/31 23:32:00 by abouzanb         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:52:40 by abouzanb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	ft_pthread_create(t_philo *philo)
 	while (i < philo->nof)
 	{
 		philo[i].time = consttime;
-		pthread_mutex_lock(&philo->save);
+		pthread_mutex_lock(philo->save);
 		philo[i].last_meal = the_time();
-		pthread_mutex_unlock(&philo->save);
+		pthread_mutex_unlock(philo->save);
 		pthread_create(&philo[i].pid, NULL, function, &philo[i]);
 		usleep(100);
 		i++;
@@ -54,7 +54,7 @@ void	supervisore(t_philo *str)
 		i = 0;
 		while (i < str->nof)
 		{
-			pthread_mutex_lock(&str[i].save);
+			pthread_mutex_lock(str[i].save);
 			if ((the_time() - str[i].last_meal) > str[i].ttd)
 			{
 				state_change(&str[i], "is died");
@@ -62,9 +62,9 @@ void	supervisore(t_philo *str)
 			}
 			if (f(&str[i], &all) == -1)
 				return ;
-			pthread_mutex_unlock(&str[i].save);
-			pthread_mutex_lock(&str[i].tcheck);
-			pthread_mutex_unlock(&str[i].tcheck);
+			pthread_mutex_unlock(str[i].save);
+			pthread_mutex_lock(str[i].tcheck);
+			pthread_mutex_unlock(str[i].tcheck);
 			i++;
 		}
 		ft_usleep(1);
