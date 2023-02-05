@@ -18,7 +18,7 @@ A deadlock is a state in computer programming where two or more <a href="https:/
  
  <br>
  
- ##  What is <a href="https://www.geeksforgeeks.org/multithreading-in-c/>thread</a> ?
+ ##  What is <a href="https://www.geeksforgeeks.org/multithreading-in-c/">thread</a> ?
  
  <h5>
  A thread in C can be thought of as a tiny, independent piece of a puzzle that helps to complete a larger picture. Think of a puzzle with multiple pieces, each piece represents a thread and each thread is unique in its own way, contributing to the overall solution. Just like a puzzle piece, a thread performs a specific task and works in harmony with other threads to complete the program efficiently.</h5>
