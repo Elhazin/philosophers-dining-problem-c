@@ -6,7 +6,7 @@
 /*   By: abouzanb <abouzanb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 23:08:26 by abouzanb          #+#    #+#             */
-/*   Updated: 2023/02/02 20:03:48 by abouzanb         ###   ########.fr       */
+/*   Updated: 2023/02/07 17:49:41 by abouzanb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	minihelp(char *av[], t_struct *ptr, t_philo *p, int i)
 {
 		p->idn = i + 1;
 		p->id = i;
+		p->all = 0;
 		p->ttd = ft_atoi(av[2]);
 		p->save = ptr->save;
 		p->print = ptr->print;

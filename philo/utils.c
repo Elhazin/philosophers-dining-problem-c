@@ -6,7 +6,7 @@
 /*   By: abouzanb <abouzanb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 22:21:41 by abouzanb          #+#    #+#             */
-/*   Updated: 2023/02/02 20:05:11 by abouzanb         ###   ########.fr       */
+/*   Updated: 2023/02/07 17:20:05 by abouzanb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	state_change(t_philo *str, char *state)
 {
 	pthread_mutex_lock(str->print);
 	printf("%ld | philo %d %s\n", (the_time() - str->time), str->idn, state);
-	if (state[3] != 'd')
+	if (state[0] != 'd')
 		pthread_mutex_unlock(str->print);
 }
 
@@ -37,7 +37,7 @@ void	do_help(t_philo *str)
 	pthread_mutex_lock(&str->forks[str->id]);
 	state_change(str, "has taken a fork");
 	pthread_mutex_lock(&str->forks[str->id_left]);
-	state_change(str, "has taken another fork");
+	state_change(str, "has taken a fork");
 	pthread_mutex_lock(str->save);
 	str->last_meal = the_time();
 	pthread_mutex_unlock(str->save);
@@ -55,7 +55,7 @@ void	*function(void *ptr)
 		ft_usleep(str->tte);
 		pthread_mutex_lock(str->tcheck);
 		if (str->check == 1)
-			str->all++;
+			++str->all;
 		pthread_mutex_unlock(str->tcheck);
 		pthread_mutex_unlock(&str->forks[str->id]);
 		pthread_mutex_unlock(&str->forks[str->id_left]);

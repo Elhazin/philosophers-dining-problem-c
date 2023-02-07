@@ -1,6 +1,6 @@
-NAME = philo_bonus
+NAME = philo
 
-Src = f_atoi.c main_bonus.c src_bonus.c
+Src = f_atoi.c main.c src.c
 
 CFLAGS  = cc -Wall -Wextra -Werror
 
