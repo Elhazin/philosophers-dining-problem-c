@@ -1,6 +1,12 @@
 
-# Project Info
 
+</p>
+<p align="center">
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FmgC5H%2FbtrB4db7asB%2FIYl8ydAMbC5YQ1JXkxKfMK%2Fimg.png" width="250">
+
+<p/>
+
+# Project Info
 The Philosophers' Dining Problem is a classic problem in computer science and concurrency control that deals with coordination between multiple processes or threads. It was first introduced by Edsger Dijkstra in 1965.
 In the problem, there are n philosophers sitting around a table, each with their own plate and fork. The philosophers alternate between thinking and eating, and they need to use two forks to eat. The problem is to ensure that each philosopher can eat without getting into a deadlock or a starvation situation.
 ##
@@ -13,11 +19,20 @@ Now, your task as a 42' student is to come up with a solution that allows all th
 ## FAQ
 
 #### what is Deadlock
+</p>
+<p align="center">
+<img src="https://github.com/Elhazin/PNG/blob/main/Screen%20Shot%202023-05-01%20at%207.56.37%20PM.png" width="500">
+
+<p/>
 A deadlock is a state in computer programming where two or more processes are blocked and unable to continue executing because each process is waiting for the other to release a resource that it holds. This creates a situation where both processes are stuck and can no longer make progress, resulting in a "deadlock" where neither process can proceed. This can lead to a system hang, causing the affected processes and potentially the entire system to become unresponsive. Deadlocks can occur in multi-process or multi-threaded systems, and are a common synchronization problem in computer science.
 
 
 #### What is Datarace ?
+</p>
+<p align="center">
+<img src="https://www.installsetupconfig.com/win32programming/threadprocesssynchronizationapis11_files/winthreadprocesssynchronizationcode018.png" width="500">
 
+<p/>
 A data race is a condition in computer programming where multiple threads attempt to access and modify a shared piece of data concurrently, leading to unpredictable results. It occurs when the execution order of operations on the shared data is not well defined, leading to a race between the threads to access and modify the same memory location. This can result in data inconsistencies, errors, and crashes, making data races a major concern in multithreaded programming.
 
 
@@ -77,3 +92,11 @@ int main() {
 ## Feedback
 
 If you have any feedback, please reach out to me at [Elhazin#9704] on Discord 
+
+
+
+</p>
+<p align="center">
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FccOHbk%2FbtrmXuGtLet%2FJzUaL05K8W5AgwZqFkKjC0%2Fimg.png" width="500">
+
+<p/>
