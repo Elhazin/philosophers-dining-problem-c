@@ -27,18 +27,18 @@
 
 typedef struct t_bonus
 {
-	int			nof;
-	int			id;
-	int			ttd;
+	int			nof; // number of philos
+	int			id; // id of the philo 
+	int			ttd;	// time to die
 	int			tts;
 	int			tte;
 	long		time;
-	atomic_long	last_meal;
-	atomic_int	number_of_meals;
-	atomic_int	count;
-	sem_t		*sem;
-	sem_t		*print;
-	pthread_t	pid;
+	atomic_long	last_meal; // time when the philo has eaten for the last time I used Atocmic in order to avoid data race
+	atomic_int	number_of_meals; 
+	atomic_int	count; 
+	sem_t		*sem; // semaphore to take the forks and this semaphore is shared between all the philos
+	sem_t		*print; // semaphore to print the state of the philo and the time. and this mutex is shared between all the philos
+	pthread_t	pid; // thread of the philo
 }t_philo;
 
 int		ft_atoi(const char *s);

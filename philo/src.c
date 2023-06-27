@@ -60,31 +60,31 @@ void	little(int ac, t_philo *p, char *av[], int i)
 		p->id_left = (i + 1);
 }
 
-int	get_that(char *av[], pthread_mutex_t *forks, t_philo *philo, int ac)
+int	get_that(char *av[], pthread_mutex_t *forks, t_philo *philo, int ac) // to get the arguments
 {
 	int				i;
 	t_struct		*ptr;
 	int				x;
 
-	ptr = malloc(sizeof(t_struct));
+	ptr = malloc(sizeof(t_struct)); // to allocate the structure of the mutexes 
 	ptr->save = malloc(sizeof(pthread_mutex_t));
 	ptr->tcheck = malloc(sizeof(pthread_mutex_t));
 	ptr->print = malloc(sizeof(pthread_mutex_t));
 	i = 0;
-	x = philo->nof;
-	pthread_mutex_init(ptr->print, NULL);
-	pthread_mutex_init(ptr->save, NULL);
-	pthread_mutex_init(ptr->tcheck, NULL);
-	philo->ptr = ptr;
+	x = philo->nof; // to save the number of philos
+	pthread_mutex_init(ptr->print, NULL); // to initialize the mutexes 
+	pthread_mutex_init(ptr->save, NULL); // to initialize the mutexes
+	pthread_mutex_init(ptr->tcheck, NULL); 
+	philo->ptr = ptr; // to save the structure of the mutexes in the structure of the philo
 	while (i < philo->nof)
 	{
-		philo[i].nof = x;
-		philo[i].forks = forks;
-		minihelp(av, ptr, &philo[i], i);
-		little(ac, &philo[i], av, i);
-		if (philo[i].ttd == -1 || philo[i].tts == -1 || philo[i].tte == -1)
-			return (-1);
-		i++;
+		philo[i].nof = x; // to save the number of philos in the structure of the philo 
+		philo[i].forks = forks; // to save the table of mutexes in the structure of the philo 
+		minihelp(av, ptr, &philo[i], i); // to save the arguments in the structure of the philo
+		little(ac, &philo[i], av, i); // to save the arguments in the structure of the philo
+		if (philo[i].ttd == -1 || philo[i].tts == -1 || philo[i].tte == -1) // if the user has entered a negative number 
+			return (-1); // return -1
+		i++; 
 	}
 	return (0);
 }

@@ -12,7 +12,7 @@
 
 #include "philo.h"
 
-int	parsing(char *av[])
+int	parsing(char *av[]) // to check if the arguments are valid or not
 {
 	int	i;
 	int	x;
@@ -38,17 +38,17 @@ long	the_time(void)
 {
 	struct timeval	tv;
 
-	gettimeofday(&tv, NULL);
-	return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
+	gettimeofday(&tv, NULL); // to get the current time
+	return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000)); // to convert the time to milliseconds
 }
 
 void	ft_usleep(long time)
 {
 	long	t;
 
-	t = the_time();
-	while ((the_time() - t) < time)
-		usleep(100);
+	t = the_time(); // to get the current time
+	while ((the_time() - t) < time) // to sleep for a specific time 
+		usleep(100); // to sleep for 100 microseconds
 }
 
 static int	helper_function(const char *s)
